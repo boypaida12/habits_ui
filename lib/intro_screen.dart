@@ -15,125 +15,135 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
-    return IntroductionSlider(
-        items: [
-          IntroductionSliderItem(
-            logo: Column(
-              children: [
-                Text('BUILD MONUMENTAL HABITS',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  color: Color.fromARGB(255, 87, 51, 83),
-                ),
-                textAlign: TextAlign.center,
-                ),
-                Image.asset('assets/images/carousel_img1.png',
-                ),
-              ],
-            ),
-            title: RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                ),
+    return Expanded(
+      child: IntroductionSlider(
+          items: [
+            IntroductionSliderItem(
+              logo: Column(
                 children: [
-                  TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
-                  TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
-                ],
-            ),
-            ),
-            backgroundColor: Colors.white,
-          ),
-          IntroductionSliderItem(
-            logo: Column(
-              children: [
-                Text('EASILY CREATE NEW HABITS',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  color: Color.fromARGB(255, 87, 51, 83),
-                ),
-                textAlign: TextAlign.center,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 44),
-                  child: Image.asset('assets/images/carousel_img2.png',
+                  Text('BUILD MONUMENTAL HABITS',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromARGB(255, 87, 51, 83),
                   ),
-                ),
-              ],
-            ),
-            title: RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                ),
-                children: [
-                  TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
-                  TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
-                ],
-            ),
-            ),
-            backgroundColor: Colors.white,
-          ),
-          IntroductionSliderItem(
-            logo: Column(
-              children: [
-                Text('TRACK YOUR PROGESS',
-                style: TextStyle(
-                  fontSize: 36,
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  color: Color.fromARGB(255, 87, 51, 83),
-                ),
-                textAlign: TextAlign.center,
-                ),
-                Padding(
-                  padding: EdgeInsets.symmetric(vertical: 68),
-                  child: Image.asset('assets/images/carousel_img3.png',
+                  textAlign: TextAlign.center,
                   ),
-                ),
-              ],
-            ),
-            title: RichText(
-              textAlign: TextAlign.center,
-              text: TextSpan(
-                style: TextStyle(
-                  fontFamily: 'Itim',
-                  fontWeight: FontWeight.w700,
-                  fontSize: 24,
-                ),
-                children: [
-                  TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
-                  TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
-                  TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                  Image.asset('assets/images/carousel_img1.png',
+                  ),
                 ],
+              ),
+              title: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24,
+                  ),
+                  children: [
+                    TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                    TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                  ],
+              ),
+              ),
+              backgroundColor: Colors.white,
             ),
+            IntroductionSliderItem(
+              logo: Column(
+                children: [
+                  Text('EASILY CREATE NEW HABITS',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromARGB(255, 87, 51, 83),
+                  ),
+                  textAlign: TextAlign.center,
+                  ),
+                  Container(
+                    height: 487,
+                    alignment: Alignment.center,
+                    child: Image.asset('assets/images/carousel_img2.png',
+                    fit: BoxFit.cover,
+                      ),
+                  ),
+                ],
+              ),
+              title: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24,
+                  ),
+                  children: [
+                    TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                    TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                  ],
+              ),
+              ),
+              backgroundColor: Colors.white,
             ),
-            backgroundColor: Colors.white,
+            IntroductionSliderItem(
+              logo: Column(
+                children: [
+                  Text('TRACK YOUR HABIT PROGRESS',
+                  style: TextStyle(
+                    fontSize: 36,
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    color: Color.fromARGB(255, 87, 51, 83),
+                  ),
+                  textAlign: TextAlign.center,
+                  ),
+                  Container(
+                    height: 487,
+                    alignment: Alignment.center,
+                    child: Image.asset(
+                      'assets/images/carousel_img3.png',
+                      fit: BoxFit.cover,
+                    ),
+                  ),
+                ],
+              ),
+              title: RichText(
+                textAlign: TextAlign.center,
+                text: TextSpan(
+                  style: TextStyle(
+                    fontFamily: 'Itim',
+                    fontWeight: FontWeight.w700,
+                    fontSize: 24,
+                  ),
+                  children: [
+                    TextSpan(text: 'WE CAN ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'HELP YOU ', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                    TextSpan(text: 'TO BE A BETTER VERSION OF ', style: TextStyle(color: Color.fromARGB(255, 87, 51, 83))),
+                    TextSpan(text: 'YOURSELF', style: TextStyle(color: Color.fromARGB(255, 254, 169, 0))),
+                  ],
+              ),
+              ),
+              backgroundColor: Colors.white,
+            ),
+            
+          ],
+          done: Done(
+            child: Icon(Icons.done, color: Color.fromARGB(255, 254, 169, 0),),
+            home: GetStartedScreen(),
           ),
-          
-        ],
-        done: Done(
-          child: Icon(Icons.done),
-          home: GetStartedScreen(),
-        ),
-        next: Next(child: Icon(Icons.arrow_forward)),
-        back: Back(child: Icon(Icons.arrow_back)),
-        dotIndicator: DotIndicator(),
+          next: Next(child: Icon(Icons.arrow_forward, color: Color.fromARGB(255, 254, 169, 0),)),
+          back: Back(child: Icon(Icons.arrow_back, color: Color.fromARGB(255, 87, 51, 83),)),
+          dotIndicator: DotIndicator(
+            unselectedColor: Color.fromARGB(255, 254, 169, 0),
+            selectedColor: Color.fromARGB(255, 87, 51, 83),
+          ),
+      ),
     );
   }
 }
