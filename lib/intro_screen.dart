@@ -15,8 +15,7 @@ class IntroScreen extends StatefulWidget {
 class _IntroScreenState extends State<IntroScreen> {
   @override
   Widget build(BuildContext context) {
-    return Expanded(
-      child: IntroductionSlider(
+    return IntroductionSlider(
           items: [
             IntroductionSliderItem(
               logo: Column(
@@ -136,6 +135,8 @@ class _IntroScreenState extends State<IntroScreen> {
           done: Done(
             child: Icon(Icons.done, color: Color.fromARGB(255, 254, 169, 0),),
             home: GetStartedScreen(),
+            animationDuration: Duration(milliseconds: 100),
+            // curve: Curves.easeInOut,
           ),
           next: Next(child: Icon(Icons.arrow_forward, color: Color.fromARGB(255, 254, 169, 0),)),
           back: Back(child: Icon(Icons.arrow_back, color: Color.fromARGB(255, 87, 51, 83),)),
@@ -143,7 +144,6 @@ class _IntroScreenState extends State<IntroScreen> {
             unselectedColor: Color.fromARGB(255, 254, 169, 0),
             selectedColor: Color.fromARGB(255, 87, 51, 83),
           ),
-      ),
-    );
+      );
   }
 }
