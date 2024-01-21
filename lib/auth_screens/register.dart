@@ -1,4 +1,4 @@
-// ignore_for_file: prefer_const_constructors
+// ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables
 
 import 'package:flutter/material.dart';
 
@@ -45,12 +45,13 @@ class _RegisterState extends State<Register> {
               backgroundColor: Colors.transparent,
               actions: [Icon(Icons.question_mark)],
             ),
-            body: Padding(
-              padding: EdgeInsets.symmetric(horizontal: 16),
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
+            body: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Padding(
+                  padding: const EdgeInsets.symmetric(
+                      vertical: 16.0, horizontal: 32),
+                  child: Text(
                     'Welcome to Monumental Habits'.toUpperCase(),
                     style: const TextStyle(
                       color: Color.fromARGB(255, 87, 51, 83),
@@ -60,7 +61,10 @@ class _RegisterState extends State<Register> {
                     ),
                     textAlign: TextAlign.center,
                   ),
-                  Column(
+                ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 16),
+                  child: Column(
                     children: [
                       Row(
                         children: [
@@ -129,15 +133,101 @@ class _RegisterState extends State<Register> {
                       ),
                     ],
                   ),
-                  Column(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      Text('Login with email',)
-                    ],
-                  )
-                ],
-              ),
+                ),
+                Align(
+                  alignment: Alignment.bottomCenter,
+                  child: Container(
+                    padding: EdgeInsets.all(16),
+                    color: Colors.white,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      crossAxisAlignment: CrossAxisAlignment.stretch,
+                      children: [
+                        Text(
+                          'Log in with email',
+                          style: TextStyle(
+                            fontSize: 20,
+                          ),
+                          textAlign: TextAlign.center,
+                        ),
+                        Divider(
+                          color: Color.fromARGB(106, 254, 169, 0),
+                        ),
+                        Column(
+                          children: [
+                            TextField(
+                              decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Color.fromARGB(255, 255, 246, 237),
+                                  prefixIcon: Icon(Icons.email_outlined),
+                                  prefixIconColor:
+                                      Color.fromARGB(255, 254, 169, 0),
+                                  hintText: 'Jonathansmth@gmail.com',
+                                  hintStyle: TextStyle(
+                                    color: Color.fromARGB(255, 254, 169, 0),
+                                    fontWeight: FontWeight.bold,
+                                  ),
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.circular(16),
+                                  )),
+                            ),
+                            SizedBox(height: 16),
+                            TextField(
+                              obscureText: true,
+                              obscuringCharacter: '*',
+                              decoration: InputDecoration(
+                                  filled: true,
+                                  fillColor: Color.fromARGB(255, 255, 246, 237),
+                                  prefixIcon: Icon(Icons.lock_outline),
+                                  suffixIcon: Row(
+                                    mainAxisSize: MainAxisSize
+                                        .min, // Ensures minimal width
+                                    children: [
+                                      Text(
+                                        'Show',
+                                        style: TextStyle(
+                                          decoration: TextDecoration.underline,
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  hintText: 'Password',
+                                  border: OutlineInputBorder(
+                                    borderSide: BorderSide.none,
+                                    borderRadius: BorderRadius.circular(16),
+                                  )),
+                            ),
+                          ],
+                        ),
+                        Row(
+                          children: [
+                            Expanded(
+                              child: ElevatedButton(
+                                  style: ButtonStyle(
+                                    backgroundColor:
+                                        MaterialStateProperty.all<Color>(
+                                            Color.fromARGB(255, 254, 169, 0)),
+                                    shape: MaterialStateProperty.all<
+                                        RoundedRectangleBorder>(
+                                      RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(8)),
+                                    ),
+                                    elevation: MaterialStateProperty.all(0),
+                                  ),
+                                  onPressed: () {},
+                                  child: Text(
+                                    'Login',
+                                  )),
+                            )
+                          ],
+                        )
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
           ),
         ),
