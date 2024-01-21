@@ -58,6 +58,16 @@ class _RegisterState extends State<Register> {
                       fontSize: 32,
                       fontFamily: 'Itim',
                       fontWeight: FontWeight.bold,
+                      shadows: [
+                        Shadow(
+                          color: Color.fromARGB(255, 254, 169,
+                              0), // Adjust the outline color as desired
+                          offset: Offset(2.5,
+                              -2.5), // Adjust the offset for outline position
+                          blurRadius:
+                              1.0, // Adjust the blur radius for outline thickness
+                        ),
+                      ],
                     ),
                     textAlign: TextAlign.center,
                   ),
@@ -83,7 +93,7 @@ class _RegisterState extends State<Register> {
                                     elevation: MaterialStateProperty.all(0),
                                     padding: MaterialStateProperty.all<
                                             EdgeInsetsGeometry>(
-                                        EdgeInsets.symmetric(vertical: 12))),
+                                        EdgeInsets.symmetric(vertical: 16))),
                                 onPressed: () {},
                                 icon: Image.asset(
                                   'assets/images/google_icon.png',
@@ -92,8 +102,9 @@ class _RegisterState extends State<Register> {
                                 label: Text(
                                   'Continue with Google',
                                   style: TextStyle(
-                                    fontSize: 16,
-                                  ),
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 87, 51, 83),
+                                      fontWeight: FontWeight.bold),
                                 )),
                           ),
                         ],
@@ -116,7 +127,7 @@ class _RegisterState extends State<Register> {
                                     elevation: MaterialStateProperty.all(0),
                                     padding: MaterialStateProperty.all<
                                             EdgeInsetsGeometry>(
-                                        EdgeInsets.symmetric(vertical: 12))),
+                                        EdgeInsets.symmetric(vertical: 16))),
                                 onPressed: () {},
                                 icon: Image.asset(
                                   'assets/images/facebook_icon.png',
@@ -125,8 +136,9 @@ class _RegisterState extends State<Register> {
                                 label: Text(
                                   'Continue with Facebook',
                                   style: TextStyle(
-                                    fontSize: 16,
-                                  ),
+                                      fontSize: 20,
+                                      color: Color.fromARGB(255, 87, 51, 83),
+                                      fontWeight: FontWeight.bold),
                                 )),
                           ),
                         ],
@@ -134,24 +146,35 @@ class _RegisterState extends State<Register> {
                     ],
                   ),
                 ),
-                Align(
-                  alignment: Alignment.bottomCenter,
+                SizedBox(
+                  height: 32,
+                ),
+                //this container should start from the bottom
+                Expanded(
                   child: Container(
                     padding: EdgeInsets.all(16),
-                    color: Colors.white,
+                    decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.only(
+                            topLeft: Radius.circular(32),
+                            topRight: Radius.circular(32))),
                     child: Column(
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       crossAxisAlignment: CrossAxisAlignment.stretch,
                       children: [
-                        Text(
-                          'Log in with email',
-                          style: TextStyle(
-                            fontSize: 20,
-                          ),
-                          textAlign: TextAlign.center,
-                        ),
-                        Divider(
-                          color: Color.fromARGB(106, 254, 169, 0),
+                        Column(
+                          children: [
+                            Text(
+                              'Log in with email',
+                              style: TextStyle(
+                                fontSize: 20,
+                              ),
+                              textAlign: TextAlign.center,
+                            ),
+                            Divider(
+                              color: Color.fromARGB(106, 254, 169, 0),
+                            ),
+                          ],
                         ),
                         Column(
                           children: [
@@ -204,7 +227,7 @@ class _RegisterState extends State<Register> {
                           children: [
                             Expanded(
                               child: ElevatedButton(
-                                  style: ButtonStyle(
+                                style: ButtonStyle(
                                     backgroundColor:
                                         MaterialStateProperty.all<Color>(
                                             Color.fromARGB(255, 254, 169, 0)),
@@ -215,12 +238,75 @@ class _RegisterState extends State<Register> {
                                               BorderRadius.circular(8)),
                                     ),
                                     elevation: MaterialStateProperty.all(0),
+                                    padding: MaterialStateProperty.all<
+                                            EdgeInsetsGeometry>(
+                                        EdgeInsets.symmetric(vertical: 16))),
+                                onPressed: () {},
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                    fontSize: 20,
+                                    fontWeight: FontWeight.bold,
+                                    color: Color.fromARGB(255, 87, 51, 83),
                                   ),
+                                ),
+                              ),
+                            ),
+                          ],
+                        ),
+                        Column(
+                          children: [
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: TextButton(
+                                    style: ButtonStyle(
+                                        padding: MaterialStateProperty.all<
+                                                EdgeInsetsGeometry>(
+                                            EdgeInsets.symmetric(
+                                                vertical: 16))),
+                                    onPressed: () {},
+                                    child: Text(
+                                      'Forgot Password?',
+                                      style: TextStyle(
+                                        fontSize: 16,
+                                        decoration: TextDecoration.underline,
+                                        color: Color.fromARGB(255, 87, 51, 83),
+                                      ),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Text(
+                                  "Don't have an account?",
+                                  style: TextStyle(
+                                    fontSize: 16,
+                                  ),
+                                ),
+                                SizedBox(
+                                  width: 12,
+                                ),
+                                TextButton(
+                                  style: ButtonStyle(
+                                      padding: MaterialStateProperty.all<
+                                              EdgeInsetsGeometry>(
+                                          EdgeInsets.symmetric(vertical: 16))),
                                   onPressed: () {},
                                   child: Text(
-                                    'Login',
-                                  )),
-                            )
+                                    'Sign up',
+                                    style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold,
+                                      color: Color.fromARGB(255, 87, 51, 83),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
                           ],
                         )
                       ],
