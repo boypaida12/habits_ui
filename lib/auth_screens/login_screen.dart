@@ -2,14 +2,14 @@
 
 import 'package:flutter/material.dart';
 
-class Register extends StatefulWidget {
-  const Register({super.key});
+class LoginScreen extends StatefulWidget {
+  const LoginScreen({super.key});
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<LoginScreen> createState() => _LoginScreenState();
 }
 
-class _RegisterState extends State<Register> {
+class _LoginScreenState extends State<LoginScreen> {
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -57,7 +57,7 @@ class _RegisterState extends State<Register> {
                   color: Color.fromARGB(96, 87, 51, 83),
                   child: Icon(
                     Icons.question_mark,
-                    color: Color.fromARGB(255, 254, 169, 0),
+                    color: Color.fromARGB(255, 87, 51, 83),
                     size: 36,
                   ),
                 ),
@@ -176,7 +176,7 @@ class _RegisterState extends State<Register> {
                           topLeft: Radius.circular(32),
                           topRight: Radius.circular(32))),
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: [
                       Column(
@@ -311,7 +311,9 @@ class _RegisterState extends State<Register> {
                                     padding: MaterialStateProperty.all<
                                             EdgeInsetsGeometry>(
                                         EdgeInsets.symmetric(vertical: 16))),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.pushReplacementNamed(context, '/register');
+                                },
                                 child: Text(
                                   'Sign up',
                                   style: TextStyle(

@@ -49,7 +49,9 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                     ),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.symmetric(vertical: 16)),
                   ),
-                  onPressed: () {}, 
+                  onPressed: () {
+                    Navigator.pushReplacementNamed(context, '/login');
+                  }, 
                   child: Text(
                     'Get Started',
                     style: TextStyle(
