@@ -281,7 +281,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                       padding: MaterialStateProperty.all<
                                               EdgeInsetsGeometry>(
                                           EdgeInsets.symmetric(vertical: 16))),
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.pushReplacementNamed(context, '/forgot_password');
+                                  },
                                   child: Text(
                                     'Forgot Password?',
                                     style: TextStyle(

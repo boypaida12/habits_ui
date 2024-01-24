@@ -27,6 +27,7 @@ class _RegisterState extends State<Register> {
                 'create your account'.toUpperCase(),
                 style: TextStyle(
                   fontFamily: 'Itim',
+                  fontWeight: FontWeight.bold,
                   decoration: TextDecoration.none,
                   color: Color.fromARGB(255, 87, 51, 83),
                   fontSize: 24,
@@ -196,7 +197,7 @@ class _RegisterState extends State<Register> {
                         // mainAxisAlignment: MainAxisAlignment.spaceBetween,
                         children: [
                           Expanded(
-                            child: ElevatedButton(
+                            child: ElevatedButton.icon(
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
@@ -211,7 +212,8 @@ class _RegisterState extends State<Register> {
                                           EdgeInsetsGeometry>(
                                       EdgeInsets.symmetric(vertical: 20))),
                               onPressed: () {},
-                              child: Text(
+                              icon: Image.asset('assets/images/google_icon.png', width: 24,),
+                              label: Text(
                                 'Google',
                                 style: TextStyle(
                                   fontSize: 16,
@@ -225,7 +227,7 @@ class _RegisterState extends State<Register> {
                             width: 16,
                           ),
                           Expanded(
-                            child: ElevatedButton(
+                            child: ElevatedButton.icon(
                               style: ButtonStyle(
                                   backgroundColor:
                                       MaterialStateProperty.all<Color>(
@@ -240,7 +242,8 @@ class _RegisterState extends State<Register> {
                                           EdgeInsetsGeometry>(
                                       EdgeInsets.symmetric(vertical: 20))),
                               onPressed: () {},
-                              child: Text(
+                              icon: Image.asset('assets/images/facebook_icon.png', width: 24,),
+                              label: Text(
                                 'Facebook',
                                 style: TextStyle(
                                   fontSize: 16,
