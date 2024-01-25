@@ -51,16 +51,17 @@ class _LoginScreenState extends State<LoginScreen> {
           appBar: AppBar(
             backgroundColor: Colors.transparent,
             actions: [
-              ClipOval(
-                child: Container(
-                  padding: EdgeInsets.all(4),
-                  color: Color.fromARGB(96, 87, 51, 83),
-                  child: Icon(
-                    Icons.question_mark,
-                    color: Color.fromARGB(255, 87, 51, 83),
-                    size: 36,
-                  ),
+              IconButton.filled(
+                style: ButtonStyle(
+                  backgroundColor: MaterialStateProperty.all<Color>(Color.fromARGB(97, 87, 51, 83))
                 ),
+                highlightColor: Color.fromARGB(255, 254, 169, 0),
+                onPressed: (){}, 
+                icon: Icon(
+                  Icons.question_mark_outlined,
+                  color: Color.fromARGB(255, 87, 51, 83),
+                  size: 36,
+                )
               ),
               SizedBox(width: 16,),
             ],
@@ -282,7 +283,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                               EdgeInsetsGeometry>(
                                           EdgeInsets.symmetric(vertical: 16))),
                                   onPressed: () {
-                                    Navigator.pushReplacementNamed(context, '/forgot_password');
+                                    Navigator.pushNamed(context, '/forgot_password');
                                   },
                                   child: Text(
                                     'Forgot Password?',

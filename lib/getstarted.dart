@@ -47,17 +47,17 @@ class _GetStartedScreenState extends State<GetStartedScreen> {
                     shape: MaterialStateProperty.all<RoundedRectangleBorder>(
                       RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
                     ),
+                    elevation: MaterialStateProperty.all(0),
                     padding: MaterialStateProperty.all<EdgeInsetsGeometry>(EdgeInsets.symmetric(vertical: 16)),
                   ),
                   onPressed: () {
-                    Navigator.pushReplacementNamed(context, '/login');
+                    Navigator.pushNamed(context, '/login');
                   }, 
                   child: Text(
                     'Get Started',
                     style: TextStyle(
-                      fontSize: 24,
-                      color: Colors.white,
-                      fontFamily: 'Itim',
+                      fontSize: 20,
+                      color: Color.fromARGB(255, 87, 51, 83),
                       fontWeight: FontWeight.bold,
                     ),
                   ),
