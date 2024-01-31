@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:habits_ui/auth_screens/forgot_password.dart';
 import 'package:habits_ui/auth_screens/register_screen.dart';
 import 'package:habits_ui/auth_screens/login_screen.dart';
+import 'package:habits_ui/home_screens/tracking_habits.dart';
 import 'package:habits_ui/intro_screen.dart';
 import 'package:habits_ui/splash_screen.dart';
-import 'package:habits_ui/getstarted.dart';
+// import 'package:habits_ui/getstarted.dart';
 
 
 class MyApp extends StatelessWidget {
@@ -28,6 +29,8 @@ class MyApp extends StatelessWidget {
         '/register': (context) => const Register(),
         '/login': (context) => const LoginScreen(),
         '/forgot_password': (context) => const ForgotPassword(),
+        '/tracking_habits': (context) => const TrackingHabits(),
+
 
       },
     );
