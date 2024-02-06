@@ -30,8 +30,13 @@ class _TrackingHabitsState extends State<TrackingHabits> {
           // SizedBox(width: 16,)
         ],
       ),
-      bottomNavigationBar: BottomNavigationBar(items: [
-        BottomNavigationBarItem(icon: Icon(Icons.home), label: 'Home'),
+      bottomNavigationBar: BottomNavigationBar(
+        type: BottomNavigationBarType.fixed,
+        items: [
+        BottomNavigationBarItem(icon: Image.asset('assets/images/home_icon.png'), label: 'Home'),
+        BottomNavigationBarItem(icon: Image.asset('assets/images/courses_icon.png'), label: 'Courses'),
+        BottomNavigationBarItem(icon: Image.asset('assets/images/community_icon.png'), label: 'Community'),
+        BottomNavigationBarItem(icon: Image.asset('assets/images/setting_icon.png'), label: 'Settings'),
       ]),
       drawer: Drawer(),
       body: Stack(
@@ -45,7 +50,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
               alignment: Alignment.bottomCenter,
               decoration: BoxDecoration(
                 image: DecorationImage(image: AssetImage('assets/images/home_bg.png')
-                , fit: BoxFit.contain),
+                , fit: BoxFit.cover),
               ),
             )
           ),
@@ -53,7 +58,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
             children: [
               Container(
                 height: MediaQuery.of(context).size.height / 6,
-                margin: EdgeInsets.symmetric(horizontal: 16),
+                margin: EdgeInsets.all(16),
                 decoration: BoxDecoration(
                   color: Colors.white,
                   borderRadius: BorderRadius.circular(12),
@@ -100,14 +105,12 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                   ],
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 16),
-                child: SizedBox(
-                  height: 50,
+              SizedBox(
+                  height: 70,
                   child: Row(
                     children: [
                       Expanded(
-                        flex: 3,
+                        flex: 4,
                         child: Padding(
                           padding: const EdgeInsets.only(left: 32),
                           child: Text(
@@ -115,25 +118,28 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                             style: TextStyle(
                               fontWeight: FontWeight.bold,
                               color: Color.fromARGB(255, 87, 51, 83),
-                              letterSpacing: -1.25,
+                              letterSpacing: -1.05,
                             ),
                             // textAlign: TextAlign.center,
                           ),
                         ),
                       ),
                       Expanded(
-                        flex: 8,
+                        flex: 9,
                         child: Container(
-                          padding: EdgeInsets.only(left: 28),
+                          margin: EdgeInsets.symmetric(vertical: 4),
+                          padding: EdgeInsets.only(left: 12),
                           child: ListView.separated(
                             separatorBuilder: (context, index) {
                               return SizedBox(
-                                width: 8,
+                                width: 2,
                               );
                             },
                             itemCount: 10,
                             itemBuilder: (context, index) {
                               return Container(
+                                margin: EdgeInsets.symmetric(
+                                      vertical: 4, horizontal: 4),
                                 width: 58,
                                 decoration: BoxDecoration(
                                   color: Colors.white,
@@ -168,7 +174,6 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                     ],
                   ),
                 ),
-              ),
               // Read a book Section
               Container(
                 margin: EdgeInsets.only(top: 16),
@@ -195,7 +200,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 87, 51, 83),
-                                letterSpacing: -1.25,
+                                letterSpacing: -1.05,
                               ),
                             ),
                           ),
@@ -266,7 +271,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 87, 51, 83),
-                                letterSpacing: -1.25,
+                                letterSpacing: -1.05,
                               ),
                             ),
                           ),
@@ -337,7 +342,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 87, 51, 83),
-                                letterSpacing: -1.25,
+                                letterSpacing: -1.05,
                               ),
                             ),
                           ),
@@ -407,7 +412,7 @@ class _TrackingHabitsState extends State<TrackingHabits> {
                               style: TextStyle(
                                 fontWeight: FontWeight.bold,
                                 color: Color.fromARGB(255, 87, 51, 83),
-                                letterSpacing: -1.25,
+                                letterSpacing: -1.05,
                               ),
                             ),
                           ),
@@ -459,6 +464,20 @@ class _TrackingHabitsState extends State<TrackingHabits> {
           
         ],
       ),
+      floatingActionButton: Container(
+        padding: EdgeInsets.all(10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(50)
+        ),
+        child: FloatingActionButton(
+          backgroundColor: Colors.amber[700],
+          shape: CircleBorder(),
+          onPressed: (){},
+          child: Image.asset('assets/images/plus_floating.png'),
+        ),
+      ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
